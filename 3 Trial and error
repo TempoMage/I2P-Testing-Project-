@@ -1,0 +1,28 @@
+import time
+# credit for help with elapse timer: Archit
+laps=[0]
+
+
+def lap():
+    lapping = raw_input("lap? (enter to lap)")
+    if lapping == "":
+        end()
+    while lapping == "":
+        break
+        lap()
+
+
+def end():
+        end = time.time()
+        elapsed = end - start
+        laps[0]+=1
+        print "%s seconds" % (elapsed)
+        print "%s lap(s)" % (laps)
+        lap()
+
+starting = raw_input("start? (s to start)")
+if starting == "s":
+    start = time.time()
+    ending = raw_input("lap? (enter to lap)")
+    if ending == "":
+        end()

@@ -1,0 +1,36 @@
+from Tkinter import *
+import time
+
+laps=[0]
+
+gui=Tk()
+
+gui.geometry("200x100")
+gui.title("lapping")
+
+def afterbutton():
+    label_1=Label(gui,text=end())
+    label_1.grid()
+    label_1.pack()
+
+def end():
+        end = time.time()
+        elapsed = end - start
+        laps[0]+=1
+        print "%s seconds" % (elapsed)
+        print "%s lap(s)" % (laps)
+
+
+
+starting = raw_input("start? (s to start)")
+if starting == "s":
+    start = time.time()
+
+button1=Button(gui,command=afterbutton,text="lap")
+button1.grid()
+button1.pack()
+
+
+
+
+gui.mainloop()

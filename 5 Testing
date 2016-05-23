@@ -1,0 +1,122 @@
+from Tkinter import *
+import time
+
+Person_1 = raw_input("Who is the 1st person?")
+Person_2 = raw_input("Who is the 2nd person?")
+Person_3 = raw_input("Who is the 3rd person?")
+Person_4 = raw_input("Who is the 4th person?")
+Person_5 = raw_input("Who is the 5th person?")
+
+starting = raw_input("start? (s to start)")
+if starting == "s":
+    start = time.time()
+elif starting != "s":
+    starting = raw_input("start? (s to start)")
+    if starting == "s":
+        start = time.time()
+
+laps_1 = [0]
+laps_2 = [0]
+laps_3 = [0]
+laps_4 = [0]
+laps_5 = [0]
+
+gui=Tk()
+
+gui.geometry("200x200")
+gui.title("lapping")
+
+
+def end():
+    end = time.time()
+    elapsed = end - start
+    print "%s seconds" % elapsed
+
+
+def first_person():
+    print "_________________________"
+    print Person_1
+    end()
+    laps_1[0] += 1
+    print "%s has run %s laps" % (Person_1, laps_1)
+    print "_________________________"
+    print "%s:%s, %s:%s, %s:%s, %s:%s, %s:%s" % (Person_1, laps_1, Person_2, laps_2, Person_3, laps_3, Person_4, laps_4, Person_5, laps_5)
+button1 = Button(gui, command=first_person, text="Lap %s" % Person_1)
+button1.grid()
+button1.pack()
+
+
+def second_person():
+    print "_________________________"
+    print Person_2
+    end()
+    laps_2[0] += 1
+    print "%s has run %s laps" % (Person_2, laps_2)
+    print "_________________________"
+    print "%s:%s, %s:%s, %s:%s, %s:%s, %s:%s" % (Person_1, laps_1, Person_2, laps_2, Person_3, laps_3, Person_4, laps_4, Person_5, laps_5)
+
+button2 = Button(gui, command=second_person, text="Lap %s" % Person_2)
+button2.grid()
+button2.pack()
+
+
+def third_person():
+    print "_________________________"
+    print Person_3
+    end()
+    laps_3[0] += 1
+    print "%s has run %s laps" % (Person_3, laps_3)
+    print "_________________________"
+    print "%s:%s, %s:%s, %s:%s, %s:%s, %s:%s" % (Person_1, laps_1, Person_2, laps_2, Person_3, laps_3, Person_4, laps_4, Person_5, laps_5)
+
+button3 = Button(gui, command=third_person, text="Lap %s" % Person_3)
+button3.grid()
+button3.pack()
+
+
+def fourth_person():
+    print "_________________________"
+    print Person_4
+    end()
+    laps_4[0] += 1
+    print "%s has run %s laps" % (Person_4, laps_4)
+    print "_________________________"
+    print "%s:%s, %s:%s, %s:%s, %s:%s, %s:%s" % (Person_1, laps_1, Person_2, laps_2, Person_3, laps_3, Person_4, laps_4, Person_5, laps_5)
+
+button4 = Button(gui, command=fourth_person, text="Lap %s" % Person_4)
+button4.grid()
+button4.pack()
+
+
+def fifth_person():
+    print "_________________________"
+    print Person_5
+    end()
+    laps_5[0] += 1
+    print "%s has run %s laps" % (Person_5, laps_5)
+    print "_________________________"
+    print "%s:%s, %s:%s, %s:%s, %s:%s, %s:%s" % (Person_1, laps_1, Person_2, laps_2, Person_3, laps_3, Person_4, laps_4, Person_5, laps_5)
+
+button5 = Button(gui, command=fifth_person, text="Lap %s" % Person_5)
+button5.grid()
+button5.pack()
+
+
+def finish_button():
+    print "_________________________"
+    print "%s has run %s lap(s)" % (Person_1, laps_1)
+    print "%s has run %s lap(s)" % (Person_2, laps_2)
+    print "%s has run %s lap(s)" % (Person_3, laps_3)
+    print "%s has run %s lap(s)" % (Person_4, laps_4)
+    print "%s has run %s lap(s)" % (Person_5, laps_5)
+
+finished_button = Button(gui,command=finish_button,text="Finish")
+finished_button.grid()
+finished_button.pack()
+
+gui.mainloop()
+
+
+
+
+

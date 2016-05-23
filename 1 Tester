@@ -1,0 +1,19 @@
+import time
+
+def timer():
+    Seconds = 00
+    Minutes = 00
+    Hours = 00
+    start=raw_input("start")
+    while start=="s":
+        print "%s:%s:%s" %(Hours, Minutes, Seconds)
+        time.sleep(1.0)
+        Seconds += 1
+        if Seconds == int(60):
+            Minutes += 1
+            Seconds = 0
+        if Minutes == int(60):
+            Hours += 1
+            Minutes = 0
+
+timer()

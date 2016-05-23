@@ -1,0 +1,23 @@
+import time
+
+def one_person():
+    starting = raw_input("start? (s to start)")
+    if starting == "s":
+        start = time.time()
+        ending = raw_input("end? (e to end)")
+        if ending == "e":
+                end = time.time()
+                elapsed = end - start
+                print "%s seconds" % (elapsed)
+
+def lap():
+    lapping = raw_input("lap? (l to lap)")
+    if lapping == "l":
+
+
+
+one_person()
+
+
+
+
